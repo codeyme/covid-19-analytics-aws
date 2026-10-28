@@ -53,7 +53,7 @@ def standardize_testing(raw: DataFrame, states: DataFrame) -> DataFrame:
 
 
 def main() -> None:
-    spark = SparkSession.builder.appName("covid-bronze-to-silver").config("spark.hadoop.fs.s3a.endpoint", "s3.amazonaws.com").config("spark.hadoop.fs.s3a.access.key", "AKIA2GTEWWXXUX6J4U7B").config("spark.hadoop.fs.s3a.secret.key", "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").enableHiveSupport().getOrCreate()
+    spark = SparkSession.builder.appName("covid-bronze-to-silver").config("spark.hadoop.fs.s3a.endpoint", "s3.amazonaws.com").config("spark.hadoop.fs.s3a.access.key", "?").config("spark.hadoop.fs.s3a.secret.key", "?").enableHiveSupport().getOrCreate()
     # read_bronze returns a dictionary; use only the three inputs needed here.
     bronze = read_bronze(spark, ["cases", "testing", "states"])
     states = _state_lookup(bronze["states"])
